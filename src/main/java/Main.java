@@ -125,6 +125,8 @@ public class test
     		int num = cloneQueue.remove();
     		if(num == x)
     			index++;
+    		else
+        		index = 0;
     	}
     	return index >1;
     }
