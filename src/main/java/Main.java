@@ -1,8 +1,9 @@
-package main;
+
+package src;
 
 import java.util.Scanner;
 
-public class test 
+public class Main 
 {
 
     public static void main(String[] args) 
@@ -130,7 +131,41 @@ public class test
     	}
     	return index >1;
     }
-    
+    public static int star(Queue<Integer> q)
+    {
+    	int x = q.head();
+    	Queue<Integer> clone = ex1(q);
+    	while(!clone.isEmpty())
+    	{
+    		int num = clone.remove();
+    		if(x < num)
+    			x = num;
+    	}
+    	return x;
+    }
+    public static int star2(Queue<Integer> q)
+    {
+    	int counter = 0;
+    	Queue<Integer> clone = ex1(q);
+    	while(!clone.isEmpty())
+    	{
+    		clone.remove();
+    		counter++;
+    	}
+    	return counter;
+    }
+    public static int star3(int num, int index)
+    {
+    	while(num<0)
+    	{
+    		int x = num % 10;
+    		if(index == 0)
+    			return num;
+    		index--;
+    	}
+    	return 0;
+    }
+    public static int star3()
     
     
 }
